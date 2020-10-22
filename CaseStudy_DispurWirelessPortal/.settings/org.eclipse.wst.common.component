@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="CaseStudy_DispurWirelessPortal">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="CaseStudy_DispurWirelessPortal"/>
+        <property name="java-output-path" value="/CaseStudy_DispurWirelessPortal/build/classes"/>
+    </wb-module>
+</project-modules>
