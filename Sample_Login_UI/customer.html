@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Dispur Wireless</title>
+
+  
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="./style.css">
 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
 <!-- partial -->
@@ -44,7 +47,11 @@
 <div id="modal1" class="modal">
   <div class="modal-content">
     <h4>Plan Details</h4>
-    <p>plans</p>
+    <div class="GFGclass" id="divGFG"></div>
+    <button class="btn waves-effect waves-light" type="submit" name="action">
+      Pay Now
+      <i class="material-icons">send</i>
+    </button>                         
   </div>
   <div class="modal-footer">
     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -73,36 +80,36 @@
       </thead>
       <tbody id="myTable">
         <tr>
-          <td>1</td>
-          <td>ABC Plan</td>
-          <td>Broadband</td>
-          <td><p>&#x20b9; 9500</p></td>
-          <td>3 Months</td>
-          <td><p>&#x20b9; 2500</p></td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Subscribe</a>
-          </td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>ABC Plan2</td>
-          <td>Broadband</td>
-          <td><p>&#x20b9; 11500</p></td>
-          <td>6 Months</td>
-          <td><p>&#x20b9; 3500</p></td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Subscribe</a>
-          </td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>ABC Plan3</td>
-          <td>Broadband</td>
-          <td><p>&#x20b9; 10500</p></td>
-          <td>4 Months</td>
+          <td class="planId">1</td>
+          <td class="planName">ABC Plan1</td>
+          <td class="planType">Broadband</td>
+          <td class="planPrice"><p>&#x20b9; 12500</p></td>
+          <td class="planValidity">3 Months</td>
           <td><p>&#x20b9; 1500</p></td>
           <td>
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Subscribe</a>
+            <a class="waves-effect waves-light btn modal-trigger modalBtn" href="#modal1">Subscribe</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="planId">2</td>
+          <td class="planName">ABC Plan2</td>
+          <td class="planType">Broadband</td>
+          <td class="planPrice"><p>&#x20b9; 15500</p></td>
+          <td class="planValidity">6 Months</td>
+          <td><p>&#x20b9; 1500</p></td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger modalBtn" href="#modal1">Subscribe</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="planId">3</td>
+          <td class="planName">ABC Plan3</td>
+          <td class="planType">Broadband</td>
+          <td class="planPrice"><p>&#x20b9; 10500</p></td>
+          <td class="planValidity">4 Months</td>
+          <td><p>&#x20b9; 1500</p></td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger modalBtn" href="#modal1">Subscribe</a>
           </td>
         </tr>
    
@@ -132,6 +139,37 @@
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
+
+  $(".modalBtn").on('click',function(){
+    var a = 
+             $(this).parents("tr").find(".planName").text(); 
+                    var c = 
+             $(this).parents("tr").find(".planType").text(); 
+                    var d = 
+             $(this).parents("tr").find(".planPrice").text(); 
+                    var e =  
+             $(this).parents("tr").find(".planValidity").text(); 
+                    var p = ""; 
+                    // CREATING DATA TO SHOW ON MODEL 
+                    p +=  
+              "<p id='a' name='GFGusername' >Plan Name: " 
+                      + a + " </p>"; 
+                    
+                    p += 
+              "<p id='c' name='GFGpp'>Plan Type: "  
+                      + c + "</p>"; 
+                    p +=  
+              "<p id='d' name='GFGscores' >Plan Price: " 
+                      + d + " </p>"; 
+                    p +=  
+              "<p id='e' name='GFGcoding' >Plan Validity: " 
+                      + e + " </p>"; 
+                    //CLEARING THE PREFILLED DATA 
+                    $("#divGFG").empty(); 
+                    //WRITING THE DATA ON MODEL 
+                    $("#divGFG").append(p); 
+    });
+
   });
   </script>
 
